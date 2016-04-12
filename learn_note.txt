@@ -1,3 +1,12 @@
 遇到master的问题一定要加引号
 遇到没有tuxconfig的问题，需要解决导入变量的问题
 遇到了定义块的定义问题
+编译服务器和客户端程序：
+[oracle@localhost tuxedo]$ buildserver -o simpserv -f simpserv.c 
+CMDTUX_CAT:4188: WARN: server built without the -s option cannot advertise services.
+[oracle@localhost tuxedo]$ buildclient -o simpcl -f simpcl.c 
+simpcl.c: In function 'main':
+simpcl.c:26: warning: incompatible implicit declaration of built-in function 'strlen'
+simpcl.c:33: warning: incompatible implicit declaration of built-in function 'strcpy'
+
+把然后把编译完的二进制文件添加到tuxedo的bin目录下，然后在启动tuxedo
