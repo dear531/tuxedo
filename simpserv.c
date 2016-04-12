@@ -6,7 +6,7 @@
 #if defined(__STDC__) || defined(__cplusplus)
 	tpsvrinit(int argc, char *argv[])
 #else
-	tmpsvrinit(argc, argv)
+	tpsvrinit(argc, argv)
 	int argc;
 	char **argv;
 #endif
