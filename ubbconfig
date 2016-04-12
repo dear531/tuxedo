@@ -1,0 +1,40 @@
+*RESOURCES
+MODEL SHM
+IPCKEY 80952
+UID 500
+GID 500
+PERM 0660
+MAXACCESSERS 150
+MAXSERVERS 75
+MAXSERVICES 200
+MASTER "localhost.localdomain"
+NOTIFY SIGNAL
+USIGNAL SIGUSR1
+LDBAL Y
+SCANUNIT 10
+SANITYSCAN 5
+
+*MACHINES
+"localhost.localdomain" LMID="localhost.localdomain"
+TUXCONFIG="/home/oracle/tuxedo11gR1/etc/tuxconfig"
+TUXDIR="/home/oracle/tuxedo11gR1"
+APPDIR="/home/oracle/tuxedo11gR1/bin"
+ENVFILE="/home/oracle/tuxedo11gR1"
+ULOGPFX="/home/oracle/tuxedo11gR1/logs"
+MAXACCESSERS=100
+MAXCONV=15
+
+*GROUPS
+
+*SERVERS
+DEFAULT: RESTART=Y MAXGEN=5 GRACE=3600
+#RCMD="/home/oracle/tuxedo11gR1/script.sh"
+ENVFILE="/home/oracle/tuxedo11gR1/tux.env"
+CLOPT="-e /home/oracle/tuxedo11gR1/logs/TLR1.err -o /home/oracle/tuxedo11gR1/logs/TLR1.out"
+SYSTEM_ACCESS=PROTECTED
+RQADDR="TLR_Q1"
+RQADDR="XFER_Q1" REPLYQ=Y
+
+*SERVICES
+DEPOSIT BUFTYPE="FML"
+LOAD=25 PRIO=70
