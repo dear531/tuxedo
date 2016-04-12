@@ -2,7 +2,7 @@
 遇到没有tuxconfig的问题，需要解决导入变量的问题
 遇到了定义块的定义问题
 编译服务器和客户端程序：
-[oracle@localhost tuxedo]$ buildserver -o simpserv -f simpserv.c 
+[oracle@localhost tuxedo]$ buildserver -o simpserv -f simpserv.c -s TOUPPER
 CMDTUX_CAT:4188: WARN: server built without the -s option cannot advertise services.
 [oracle@localhost tuxedo]$ buildclient -o simpcl -f simpcl.c 
 simpcl.c: In function 'main':
