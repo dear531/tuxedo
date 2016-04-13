@@ -14,17 +14,13 @@ DEFAULT:
 TUXCONFIG="/home/oracle/tuxedo11gR1/etc/tuxconfig"
 TUXDIR="/home/oracle/tuxedo11gR1"
 APPDIR="/home/oracle/tuxedo11gR1/bin"
-ENVFILE="/home/oracle/tuxedo11gR1"
-ULOGPFX="/home/oracle/tuxedo11gR1/logs/log"
+ENVFILE="/home/oracle/tuxedo11gR1/tux.env"
+ULOGPFX="/home/oracle/tuxedo11gR1/ulogs/log"
 TLOGSIZE=500
 MAXWSCLIENTS=50
 centos5_hp LMID=centos5_hp
 *GROUPS
-GROUP1
- LMID=centos5_hp GRPNO=1  OPENINFO=NONE
-
-GROUPWSL
-  LMID=centos5_hp GRPNO=6  OPENINFO=NONE 
+GROUP1 LMID=centos5_hp GRPNO=1  OPENINFO=NONE
  
 *SERVERS
 DEFAULT:
@@ -39,5 +35,3 @@ simpserv SRVGRP=GROUP1 SRVID=1
 
 *SERVICES
 TOUPPER PRIO=60 LOAD=60
-DEPOSIT BUFTYPE="FML"
-LOAD=25 PRIO=70

@@ -13,6 +13,8 @@
 {
 	argc = argc;
 	argv = argv;
+	userlog("Welcome to the simple server");
+	return 0;
 }
 #ifdef __cplusplus
 	extern "C"

@@ -32,10 +32,14 @@ char *argv[];
 	}
 	(void)strcpy(sendbuf, ptr);
 	ret = tpcall("TOUPPER", (char *)sendbuf, 0,
-			(char**)&rcvbuf, &rcvlen, (long)0);
+			(char**)&rcvbuf, &rcvlen, 0);
 	if (ret == -1) {
-		(void) fprintf(stderr, "Can't send request to service TOUPPER\n");
+		(void)fprintf(stderr, "Can't send request to service TOUPPER\n");
 		(void)fprintf(stderr, "Tperrno = %d\n", tperrno);
+		fprintf(stderr, "tpcall error :%s\n",
+				tpstrerror(tperrno));
+		fprintf(stdout, "sendbuf :%s\n", sendbuf);
+		fprintf(stdout, "rcvbuf :%s\n", rcvbuf);
 		tpfree(sendbuf);
 		tpfree(rcvbuf);
 		tpterm();
