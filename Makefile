@@ -1,5 +1,6 @@
+CFLAGS	+=-I $(HOME)/tuxedo11gR1/include/
 default:simpserv simpcl
-	/home/oracle/tuxedo11gR1/tux.env 
+	. /home/oracle/tuxedo11gR1/tux.env 
 	buildserver -o simpserv -f simpserv.c -s TOUPPER
 	buildclient -o simpcl -f simpcl.c
 install:
