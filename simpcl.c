@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <atmi.h>
+#include <string.h>
 
 #if defined(__STDC__) || defined(__cplusplus)
 int main(int argc, char *argv[])
@@ -11,11 +12,13 @@ char *argv[];
 {
 	char *sendbuf, *rcvbuf, *ptr;
 	char *msg = "Tuxedo is powerful!";
-	long sendlen, rcvlen;
+	long sendlen, rcvlen = 0;
 	int ret;
 
 	if (tpinit((TPINIT*)NULL) == -1) {
 		(void)fprintf(stderr, "Tpinit failed\n");
+		fprintf(stderr, "tpinit error :%s\n",
+				tpstrerror(tperrno));
 		exit(EXIT_FAILURE);
 	}
 	if (argc != 2) {
@@ -30,16 +33,20 @@ char *argv[];
 		tpterm();
 		exit(EXIT_FAILURE);
 	}
+	if ((rcvbuf = (char *)tpalloc("STRING", NULL, sendlen+1)) == NULL) {
+		(void)fprintf(stderr, "Error allocating buff send\n");
+		tpfree(rcvbuf);
+		tpterm();
+		exit(EXIT_FAILURE);
+	}
 	(void)strcpy(sendbuf, ptr);
-	ret = tpcall("TOUPPER", (char *)sendbuf, 0,
-			(char**)&rcvbuf, &rcvlen, 0);
+	char src[] = "TOUPPER";
+	ret = tpcall(src, (char *)sendbuf, 0L, (char **)&rcvbuf, (long *)&rcvlen, 0L);
 	if (ret == -1) {
 		(void)fprintf(stderr, "Can't send request to service TOUPPER\n");
 		(void)fprintf(stderr, "Tperrno = %d\n", tperrno);
 		fprintf(stderr, "tpcall error :%s\n",
 				tpstrerror(tperrno));
-		fprintf(stdout, "sendbuf :%s\n", sendbuf);
-		fprintf(stdout, "rcvbuf :%s\n", rcvbuf);
 		tpfree(sendbuf);
 		tpfree(rcvbuf);
 		tpterm();
@@ -47,8 +54,12 @@ char *argv[];
 	}
 	(void)fprintf(stdout, "Original string is :%s\n", ptr);
 	(void)fprintf(stdout, "Return string is :%s\n", rcvbuf);
-	tpfree(sendbuf);
-	tpfree(rcvbuf);
+	if (NULL != sendbuf) {
+		tpfree(sendbuf);
+	}
+	if (NULL != rcvbuf) {
+		tpfree(rcvbuf);
+	}
 	tpterm();
 	return 0;
 }

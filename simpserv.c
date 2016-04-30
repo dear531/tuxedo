@@ -29,5 +29,6 @@
 	int i;
 	for (i = 0; i < rqst->len - 1; i++)
 		rqst->data[i] = toupper(rqst->data[i]);
+	userlog("client accpet");
 	tpreturn(TPSUCCESS, 0, rqst->data, 0L, 0);
 }

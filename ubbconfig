@@ -1,7 +1,7 @@
 *RESOURCES
 IPCKEY  123456
 DOMAINID server_240
-MASTER centos5_hp
+MASTER site1
 MAXACCESSERS 1000
 MAXSERVERS 1000
 MAXSERVICES 2500
@@ -9,18 +9,19 @@ MAXGTT   5
 MODEL  SHM
 LDBAL  N
 BLOCKTIME   10
+
 *MACHINES
 DEFAULT:
-TUXCONFIG="/home/oracle/tuxedo11gR1/etc/tuxconfig"
+centos5vm_amd LMID=site1
+APPDIR="/home/oracle/tuxedo11gR1/app"
+TUXCONFIG="/home/oracle/tuxedo11gR1/app/tuxconfig"
 TUXDIR="/home/oracle/tuxedo11gR1"
-APPDIR="/home/oracle/tuxedo11gR1/bin"
 ENVFILE="/home/oracle/tuxedo11gR1/tux.env"
 ULOGPFX="/home/oracle/tuxedo11gR1/ulogs/log"
 TLOGSIZE=500
 MAXWSCLIENTS=50
-centos5_hp LMID=centos5_hp
 *GROUPS
-GROUP1 LMID=centos5_hp GRPNO=1  OPENINFO=NONE
+GROUP1 LMID=site1 GRPNO=1  OPENINFO=NONE
  
 *SERVERS
 DEFAULT:

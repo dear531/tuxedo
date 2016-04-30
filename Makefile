@@ -1,14 +1,14 @@
-CFLAGS	+=-I $(HOME)/tuxedo11gR1/include/
 default:simpserv simpcl
-	. /home/oracle/tuxedo11gR1/tux.env 
 	buildserver -o simpserv -f simpserv.c -s TOUPPER
 	buildclient -o simpcl -f simpcl.c
 install:
-	cp simpserv simpcl /home/oracle/tuxedo11gR1/bin/
+	cp simpserv simpcl /home/oracle/tuxedo11gR1/app/
 uninstall:
 	-rm -rf /home/oracle/tuxedo11gR1/bin/simpcl
 	-rm -rf /home/oracle/tuxedo11gR1/bin/simpserv
 clean:
 	-rm -rf simpcl simpserv access.*
+echo:
+	echo TUXDIR:$(TUXDIR)
 .PHONY:
 	default clean install
