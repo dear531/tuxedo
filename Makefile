@@ -1,5 +1,6 @@
-default:simpserv simpcl
+default:simpserv simpcl wsimpcl 
 	buildserver -o simpserv -f simpserv.c -s TOUPPER
+	buildclient -o wsimpcl -f simpcl.c -w
 	buildclient -o simpcl -f simpcl.c
 install:
 	cp simpserv simpcl /home/oracle/tuxedo11gR1/app/

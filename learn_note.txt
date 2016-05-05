@@ -10,3 +10,12 @@ simpcl.c:26: warning: incompatible implicit declaration of built-in function 'st
 simpcl.c:33: warning: incompatible implicit declaration of built-in function 'strcpy'
 
 把然后把编译完的二进制文件添加到tuxedo的bin目录下，然后在启动tuxedo
+
+----------
+NLS:4: Cannot open message catalog TMADMIN_CAT, set 1, num 184; check
+TUXDIR=/home/dev/app/tuxedo8.1, LANG=zh_CN.GB18030
+可以肯定,这个错误是由字符集引起的,我用的是简体中文linux
+添加环境变量vi .bash_profile 添加如下内容
+export LANG=C
+保存退出,source .bash_profile 使环境变量生效
+
