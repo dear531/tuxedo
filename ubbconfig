@@ -1,5 +1,5 @@
 *RESOURCES
-IPCKEY  123456
+IPCKEY  123456 #BBL Queue Name 
 DOMAINID server_240
 MASTER site1
 MAXACCESSERS 1000
@@ -7,7 +7,7 @@ MAXSERVERS 1000
 MAXSERVICES 2500
 MAXGTT   5
 MODEL  SHM
-LDBAL  N
+LDBAL  Y #local balance
 BLOCKTIME   10
 
 *MACHINES
@@ -26,15 +26,9 @@ WSGRP LMID=site1 GRPNO=2 #WSL
  
 *SERVERS
 DEFAULT:
-#  CLOPT="-A" RESTART=Y GRACE=86400
-#======================= GROUP1 servers Define ==========================#  
-#GENERAL_SERVICE SRVGRP=GROUP1 SRVID=200 MIN=1 MAX=2 REPLYQ=Y RQADDR="GENERAL_SERVICE" MAXGEN=2
-
-#WSL SRVGRP=GROUP1 SRVID=700 MIN=1 MAX=1 REPLYQ=Y  MAXGEN=2 RESTART=Y CLOPT = "-A -t -- -n //192.168.1.201:3195 -H //192.168.1.201:3195 -m 5 -M 20 -x 3 -T 120 -I 30"
-#WSL SRVGRP=GROUPWSL  SRVID=2 MAXGEN=2 CLOPT=" -A -- -n //192.168.0.151:3195 -m 2 -M 6 -x 10"
 #CLOPT="-A" simpserv SRVGRP=GROUP1 SRVID=1 #normal
 simpserv SRVGRP=GROUP1 SRVID=1 MIN=5 MAX=10 #mutil server
-RQADDR="Q1" REPLYQ=Y CLOPT="-A -p 5,6:15,3" #mutil server of single sequeue, remove is mutil sequeue
+#RQADDR="Q1" REPLYQ=Y CLOPT="-A -p 5,6:15,3" #mutil server of single sequeue, remove is mutil sequeue
 WSL SRVID=10 SRVGRP=WSGRP RESTART=Y MAXGEN= 10 GRACE=3600 CLOPT="-A -- -n//192.168.0.152:7110 -m 5 -M 10 -x 5" #workstation listener
 
 *SERVICES
