@@ -1,7 +1,7 @@
 tagter	:=simpserv simpcl wsimpcl
 default:$(tagter)
 	buildserver -o simpserv -f simpserv.c -s TOUPPER
-	buildclient -o wsimpcl -f simpcl.c -w
+	buildclient -o wsimpcl -f simpcl.c -w #workstation listener
 	buildclient -o simpcl -f simpcl.c
 install:
 	cp simpserv /home/oracle/tuxedo11gR1/app/
