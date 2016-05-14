@@ -1,3 +1,8 @@
+#1.make head_binary
+#2.tmshutdown -y
+#3.make && make install
+#4.tmboot -y
+#5. ./VIEW_cli
 tagter	:=VIEW_serv VIEW_cli
 default:$(tagter)
 	buildserver -o VIEW_serv -f VIEW_serv.c -s ADD_FRIEND

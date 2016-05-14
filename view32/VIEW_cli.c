@@ -51,6 +51,7 @@ extern int	_TMDLLENTRY tpcall _((char _TM_FAR *, char _TM_FAR *, long, char _TM_
 	memcpy(friendp->fname, "Snna", sizeof("Snna"));
 	memcpy(friendp->fmobile, "13644445555", sizeof("13644445555"));
 	long send_len = 0;
+	fprintf(stdout, "before tpcall friendp->friend_id:%ld\n", friendp->friend_id);
 	if (-1 == tpcall("ADD_FRIEND", (char *)friendp, sizeof(*friendp),
 				(char **)&friendp, &send_len, 0))
 	{
@@ -59,6 +60,7 @@ extern int	_TMDLLENTRY tpcall _((char _TM_FAR *, char _TM_FAR *, long, char _TM_
 		goto failure;
 	}
 failure:
+	fprintf(stdout, "after tpcall friendp->friend_id:%ld\n", friendp->friend_id);
 	/* tpfree */
 	if (NULL != friendp)
 		tpfree((char *)friendp);

@@ -22,5 +22,6 @@ TPSVCINFO *transb;
 	userlog("%s %s %d", __FILE__, __func__, __LINE__);
 	userlog("mobile:%s name:%s id:%ld",
 			transv->fmobile, transv->fname, transv->friend_id);
+	transv->friend_id = 5L;
 	tpreturn(TPSUCCESS, 0, transb->data, 0L, 0);
 }
