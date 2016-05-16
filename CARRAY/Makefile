@@ -5,8 +5,8 @@ default:$(tagter)
 install:
 	cp CARRAY_serv serv.jpg /home/oracle/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/bin/CARRAY_serv
-	-rm -rf /home/oracle/tuxedo11gR1/bin/serv.jpg
+	-rm -rf /home/oracle/tuxedo11gR1/app/CARRAY_serv
+	-rm -rf /home/oracle/tuxedo11gR1/app/serv.jpg
 clean:
 	-rm -rf $(tagter) access.*
 echo:

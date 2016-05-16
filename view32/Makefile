@@ -13,8 +13,8 @@ head_binary:
 install:
 	cp VIEW_serv /home/oracle/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/bin/VIEW_serv
-	-rm -rf /home/oracle/tuxedo11gR1/bin/friend.V
+	-rm -rf /home/oracle/tuxedo11gR1/app/VIEW_serv
+	-rm -rf /home/oracle/tuxedo11gR1/app/friend.V
 clean:
 	-rm -rf $(tagter) access.*
 echo:

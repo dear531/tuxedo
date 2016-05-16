@@ -6,7 +6,7 @@ default:$(tagter)
 install:
 	cp simpserv /home/oracle/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/bin/simpserv
+	-rm -rf /home/oracle/tuxedo11gR1/app/simpserv
 clean:
 	-rm -rf $(tagter) access.*
 echo:
