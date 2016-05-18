@@ -54,6 +54,8 @@ int tpcall(char *svc, char *idata, long ilen, char **odata, long
 				tpstrerror(tperrno));
 		goto failure;
 	}
+	(void)Fget32(fbfr, FRIEND_ID, 0, (char *)&fid, 0);
+	fprintf(stdout, "fid :%ld\n", fid);
 	char fname[10] = {0};
 	(void)Fget32(fbfr, FNAME, 0, fname, 0);
 	fprintf(stdout, "fname :%s\n", fname);

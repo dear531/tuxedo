@@ -9,10 +9,10 @@ install:
 	cp simpserv simpcl /home/oracle/tuxedo11gR1/app/
 	cp CARRAY_serv serv.jpg /home/oracle/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/bin/simpcl
-	-rm -rf /home/oracle/tuxedo11gR1/bin/simpserv
-	-rm -rf /home/oracle/tuxedo11gR1/bin/CARRAY_serv
-	-rm -rf /home/oracle/tuxedo11gR1/bin/serv.jpg
+	-rm -rf /home/oracle/tuxedo11gR1/app/simpcl
+	-rm -rf /home/oracle/tuxedo11gR1/app/simpserv
+	-rm -rf /home/oracle/tuxedo11gR1/app/CARRAY_serv
+	-rm -rf /home/oracle/tuxedo11gR1/app/serv.jpg
 clean:
 	-rm -rf $(tagter) access.*
 echo:

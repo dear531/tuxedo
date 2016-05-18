@@ -21,6 +21,12 @@ TPSVCINFO *rqst;
 	friend_id = (long)Fvall32(transb, FRIEND_ID, 0);
 	(void)Fget32(transb, FNAME, 0, fname, 0);
 	(void)Fget32(transb, FMOBILE, 0, fmobile, 0);
+	friend_id = 100;
+	if (-1 == Fchg32(transb, FRIEND_ID, 0, (char *)&friend_id, sizeof(friend_id)))
+	{
+		userlog("file %s Fchg32 in func %s line %d error :%s",
+				__FILE__, __func__, __LINE__, tpstrerror(tperrno));
+	}
 	userlog("friend_id :%ld,fname :%s, fmobile:%s",
 			friend_id, fname, fmobile);
 #endif
