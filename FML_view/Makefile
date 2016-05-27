@@ -5,7 +5,7 @@ default:$(tagter)
 fml_head:
 	mkfldhdr32 friendfv.fml
 head_binary:
-	viewc32 -n -d $$APPDIR friendfv.v
+	viewc32 -d $$TUXDIR/udataobj friendfv.v
 install:
 	cp FML_VIEW_serv /home/oracle/tuxedo11gR1/app/
 uninstall:

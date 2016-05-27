@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <atmi.h>
-#include <fml32.h>
+#include <fml1632.h>
 #include <string.h>
 #include "friendfv.h"
 #include "friendfv.fml.h"
@@ -38,17 +38,25 @@ friendp = (struct friend *)tpalloc("VIEW32", "friend", sizeof(*friendp))
 int tpcall(char *svc, char *idata, long ilen, char **odata, long *olen, long flags)
 #endif
 	long rcv_len = 0;
-	friendfvp->friend_id = 0;
+	friendfvp->friend_id = 0L;
 	memcpy(friendfvp->fname, "JQ", sizeof("JQ"));
 	memcpy(friendfvp->fmobile, "13344445555", sizeof("13344445555"));
 
 	struct Fbfr32 *fbfr = NULL;
+#if 1
 	if (NULL == (fbfr = (struct Fbfr32 *)tpalloc("FML32", NULL, 0)))
 	{
 		fprintf(stderr, "tpalloc error line :%d :%s\n",
 				__LINE__, tpstrerror(tperrno));
 		goto failure;
 	}
+#else
+	if (NULL == (fbfr = (struct Fbfr32 *)Falloc32(1024, 1)))
+	{
+				F_error32("Falloc32 error");
+		goto failure;
+	}
+#endif
 #if 0
 int Fvstof32(FBFR32 *fbfr, char *cstruct, int mode, char *view)
 #endif
@@ -63,8 +71,8 @@ int Fvstof32(FBFR32 *fbfr, char *cstruct, int mode, char *view)
 #if 0
 	(void)Fget32(fbfr, FNAME, 0, fname, 0);
 	fprintf(stdout, "Fadd32 and Fget32 fname :%s\n", fname);
-#endif
 	Fadd32(fbfr, FNAME, friendfvp->fname, sizeof(friendfvp->fname));
+#endif
 	Fprint32(fbfr);
 
 	if (-1 == tpcall("FVs", (char *)fbfr, 0L, (char **)&fbfr, &rcv_len, 0L))
