@@ -2,8 +2,8 @@
 #include <atmi.h>
 #include <fml1632.h>
 #include <string.h>
-#include "friendfv.h"
-#include "friendfv.fml.h"
+#include <friendfv.h>
+#include <friendfvfml.h>
 
 int
 #if defined(__STDC__) || defined(__cplusplus)
