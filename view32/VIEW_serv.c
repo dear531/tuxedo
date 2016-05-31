@@ -2,7 +2,7 @@
 #include <sqlcode.h>
 #include <userlog.h>
 #include <atmi.h>
-#include "friend.h"
+#include <friend.h>
 
 void
 #if defined(_STDC__) || defined(__cplusplus)

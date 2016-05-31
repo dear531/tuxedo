@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <atmi.h>
 #include <string.h>
-#include "friend.h"
+#include <friend.h>
 
 int
 #if defined (__STDC__) || (__cplusplus)
