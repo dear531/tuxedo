@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <atmi.h>
 
-#include "friend.fml.h"
+#include <friendfml.h>
 
 int
 #if defined(__STDC__) || defined(__cplusplus)

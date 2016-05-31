@@ -1,7 +1,7 @@
 #include <fml32.h>
 #include <atmi.h>
 #include <string.h>
-#include "friend.fml.h"
+#include <friendfml.h>
 
 int
 #if defined(__STDC__) || defined(__cplusplus)
