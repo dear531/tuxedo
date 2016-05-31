@@ -3,13 +3,13 @@ default:$(tagter)
 	buildserver -o FML_VIEW_serv -f FML_VIEW_serv.c -s FVs
 	buildclient -o FML_VIEW_cli -f FML_VIEW_cli.c
 fml_head:
-	mkfldhdr32 friendfv.fml
-	cp friendfv.fml.h /home/oracle/tuxedo11gR1/include/friendfvfml.h
-	rm friendfv.fml.h
+	mkfldhdr32 friend.fml
+	cp friend.fml.h /home/oracle/tuxedo11gR1/include/friendfml.h
+	rm friend.fml.h
 head_binary:
-	viewc32 -d $$TUXDIR/udataobj friendfv.v
-	cp friendfv.h /home/oracle/tuxedo11gR1/include/
-	rm friendfv.h
+	viewc32 -d $$TUXDIR/udataobj friend.v
+	cp friend.h /home/oracle/tuxedo11gR1/include/
+	rm friend.h
 install:
 	cp FML_VIEW_serv /home/oracle/tuxedo11gR1/app/
 uninstall:
