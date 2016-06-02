@@ -2,3 +2,6 @@
 FRIEND_ID	51	long	-	-
 FNAME		52	string	-	-
 FMOBILE		53	string	-	-
+PHOTO		54	carray	-	-
+RECFML		55	fml32	-	-
+RECVIEW		56	view32	-	-
