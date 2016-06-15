@@ -54,6 +54,7 @@ size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
 		goto failure;
 	}
 	memcpy(send_buff, xml_buff, n);
+	fprintf(stdout, "send_buff :%s\n", send_buff);
 	if (-1 == tpcall("XML", send_buff, n, &send_buff, &recv_len, 0))
 	{
 		fprintf(stderr, "tpcall error :%s\n", tpstrerror(tperrno));
