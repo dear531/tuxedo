@@ -1,3 +1,4 @@
+CFLAGS	:=-g
 tagter	:=XML_serv XML_cli
 default:$(tagter)
 	buildserver -s XML -o XML_serv -f XML_serv.cpp -f -ltxml
@@ -11,5 +12,6 @@ clean:
 echo:
 	echo TUXDIR:$(TUXDIR)
 	echo tagter:$(tagter)
+	echo CFLAGS:$(CFLAGS)
 .PHONY:
 	default clean install
