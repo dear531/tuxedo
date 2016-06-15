@@ -44,5 +44,7 @@ int tpcall(char *svc, char *idata, long ilen, char **odata, long
 	fprintf(stdout, "send_buff :%s\n", send_buff);
 failure:
 	/* tpterm */
+	if (NULL != send_buff)
+		tpfree(send_buff);
 	tpterm();
 }
