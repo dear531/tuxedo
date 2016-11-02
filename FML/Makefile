@@ -1,6 +1,8 @@
 tagter	:=FML_serv FML_cli
 default:$(tagter)
+FML_serv:
 	buildserver -f FML_serv.c -o FML_serv -s FML32
+FML_cli:
 	buildclient -f FML_cli.c -o FML_cli
 install:
 	cp FML_serv /home/oracle/tuxedo11gR1/app/

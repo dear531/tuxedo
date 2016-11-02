@@ -4,7 +4,9 @@
 #4. ./emdeb_cli
 tagter	:=emdeb_serv emdeb_cli
 default:$(tagter)
+emdeb_serv:
 	buildserver -o emdeb_serv -f emdeb_serv.c -s EMDEB
+emdeb_cli:
 	buildclient -o emdeb_cli -f emdeb_cli.c
 install:
 	cp emdeb_serv /home/oracle/tuxedo11gR1/app/

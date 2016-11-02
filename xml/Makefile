@@ -1,7 +1,9 @@
 CFLAGS	:=-g
 tagter	:=XML_serv XML_cli
 default:$(tagter)
+XML_serv:
 	buildserver -s XML -o XML_serv -f XML_serv.cpp -f -ltxml
+XML_cli:
 	buildclient -f XML_cli.cpp -o XML_cli -f -ltxml
 install:
 	cp XML_serv /home/oracle/tuxedo11gR1/app/

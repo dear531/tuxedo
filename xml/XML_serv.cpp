@@ -58,7 +58,7 @@ int TopTree(DOM_Node node)
 			for (int i = 0; i < children.getLength(); i++)
 				TopTree(children.item(i));
 		}
-		userlog("node.getNodeName :%s", (char *)node.getNodeValue());
+		userlog("node.getNodeName :%s", node.getNodeValue());
 	}
 	return 0;
 }

@@ -4,7 +4,9 @@
 #4. ./VIEW_cli
 tagter	:=VIEW_serv VIEW_cli
 default:$(tagter)
+VIEW_serv:
 	buildserver -o VIEW_serv -f VIEW_serv.c -s ADD_FRIEND
+VIEW_cli:
 	buildclient -o VIEW_cli -f VIEW_cli.c
 install:
 	cp VIEW_serv /home/oracle/tuxedo11gR1/app/

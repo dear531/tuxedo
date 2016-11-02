@@ -1,7 +1,9 @@
 CFLAGS  :=-g
 tagter	:=NOTIFY_serv NOTIFY_cli
 default:$(tagter)
+NOTIFY_serv:
 	buildserver -f NOTIFY_serv.c -o NOTIFY_serv -s NOTIFY
+NOTIFY_cli:
 	buildclient -f NOTIFY_cli.c -o NOTIFY_cli
 install:
 	-cp NOTIFY_serv /home/oracle/tuxedo11gR1/app/

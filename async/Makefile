@@ -1,6 +1,8 @@
-tagter	:=ASYNC_serv FML_cli
+tagter	:=ASYNC_serv ASYNC_cli
 default:$(tagter)
+ASYNC_serv:
 	buildserver -f ASYNC_serv.c -o ASYNC_serv -s ASYNC
+ASYNC_cli:
 	buildclient -f ASYNC_cli.c -o ASYNC_cli
 install:
 	cp ASYNC_serv /home/oracle/tuxedo11gR1/app/

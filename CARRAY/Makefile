@@ -1,6 +1,8 @@
 tagter	:=CARRAY_serv CARRAY_cli
 default:$(tagter)
+CARRAY_serv:
 	buildserver -o CARRAY_serv -f CARRAY_serv.c -s ARRAY_SERV
+CARRAY_cli:
 	buildclient -o CARRAY_cli -f CARRAY_cli.c
 install:
 	cp CARRAY_serv serv.jpg /home/oracle/tuxedo11gR1/app/
