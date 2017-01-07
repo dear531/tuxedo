@@ -5,9 +5,9 @@ FML_serv:
 FML_cli:
 	buildclient -f FML_cli.c -o FML_cli
 install:
-	cp FML_serv /home/oracle/tuxedo11gR1/app/
+	cp FML_serv /home/tuxedo/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/app/FML_serv 
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/FML_serv 
 clean:
 	-rm -rf $(tagter) access.*
 echo:

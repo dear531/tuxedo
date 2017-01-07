@@ -13,11 +13,11 @@ BLOCKTIME   10
 *MACHINES
 DEFAULT:
 ctos LMID=SITE1
-APPDIR="/home/oracle/tuxedo11gR1/app"
-TUXCONFIG="/home/oracle/tuxedo11gR1/app/tuxconfig"
-TUXDIR="/home/oracle/tuxedo11gR1"
-ENVFILE="/home/oracle/tuxedo11gR1/tux.env"
-ULOGPFX="/home/oracle/tuxedo11gR1/ulogs/log"
+APPDIR="/home/tuxedo/tuxedo11gR1/app"
+TUXCONFIG="/home/tuxedo/tuxedo11gR1/app/tuxconfig"
+TUXDIR="/home/tuxedo/tuxedo11gR1"
+ENVFILE="/home/tuxedo/tuxedo11gR1/tux.env"
+ULOGPFX="/home/tuxedo/tuxedo11gR1/ulogs/log"
 TLOGSIZE=500
 MAXWSCLIENTS=50 #WSL
 *GROUPS

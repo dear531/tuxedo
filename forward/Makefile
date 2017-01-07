@@ -7,11 +7,11 @@ forwardb:
 forward_cli:
 	buildclient -f forward_cli.c -o forward_cli
 install:
-	-cp forwarda /home/oracle/tuxedo11gR1/app/
-	-cp forwardb /home/oracle/tuxedo11gR1/app/
+	-cp forwarda /home/tuxedo/tuxedo11gR1/app/
+	-cp forwardb /home/tuxedo/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/app/forwarda 
-	-rm -rf /home/oracle/tuxedo11gR1/app/forwardb
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/forwarda 
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/forwardb
 clean:
 	-rm -rf $(tagter) access.* a.out
 echo:

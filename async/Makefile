@@ -5,9 +5,9 @@ ASYNC_serv:
 ASYNC_cli:
 	buildclient -f ASYNC_cli.c -o ASYNC_cli
 install:
-	cp ASYNC_serv /home/oracle/tuxedo11gR1/app/
+	cp ASYNC_serv /home/tuxedo/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/app/ASYNC_serv 
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/ASYNC_serv 
 clean:
 	-rm -rf $(tagter) access.*
 echo:

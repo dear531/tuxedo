@@ -6,13 +6,13 @@ default:$(tagter)
 	buildserver -o CARRAY_serv -f CARRAY_serv.c -s ARRAY_SERV
 	buildclient -o CARRAY_cli -f CARRAY_cli.c
 install:
-	cp simpserv simpcl /home/oracle/tuxedo11gR1/app/
-	cp CARRAY_serv serv.jpg /home/oracle/tuxedo11gR1/app/
+	cp simpserv simpcl /home/tuxedo/tuxedo11gR1/app/
+	cp CARRAY_serv serv.jpg /home/tuxedo/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/app/simpcl
-	-rm -rf /home/oracle/tuxedo11gR1/app/simpserv
-	-rm -rf /home/oracle/tuxedo11gR1/app/CARRAY_serv
-	-rm -rf /home/oracle/tuxedo11gR1/app/serv.jpg
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/simpcl
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/simpserv
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/CARRAY_serv
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/serv.jpg
 clean:
 	-rm -rf $(tagter) access.*
 echo:

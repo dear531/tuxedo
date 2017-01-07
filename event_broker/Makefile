@@ -2,7 +2,7 @@ CFLAGS  :=-g
 tagter	:=Subscriber Poster
 default:$(tagter)
 stockdata.h:
-	viewc32 -n -d /home/oracle/tuxedo11gR1/udataobj/ stockdata.v
+	viewc32 -n -d /home/tuxedo/tuxedo11gR1/udataobj/ stockdata.v
 Subscriber:stockdata.h
 	buildclient -f Subscriber.c -o Subscriber
 Poster:stockdata.h

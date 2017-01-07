@@ -9,10 +9,10 @@ emdeb_serv:
 emdeb_cli:
 	buildclient -o emdeb_cli -f emdeb_cli.c
 install:
-	cp emdeb_serv /home/oracle/tuxedo11gR1/app/
+	cp emdeb_serv /home/tuxedo/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/app/emdeb_serv
-	-rm -rf /home/oracle/tuxedo11gR1/app/friend.V
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/emdeb_serv
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/friend.V
 clean:
 	-rm -rf $(tagter) access.*
 echo:

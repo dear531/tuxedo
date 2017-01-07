@@ -8,9 +8,9 @@ wsimpcl:simpcl.c
 simpcl:simpcl.c
 	buildclient -o simpcl -f simpcl.c
 install:
-	cp simpserv /home/oracle/tuxedo11gR1/app/
+	cp simpserv /home/tuxedo/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/app/simpserv
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/simpserv
 clean:
 	-rm -rf $(tagter) access.*
 echo:

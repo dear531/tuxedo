@@ -5,9 +5,9 @@ MBSTRING_serv:
 MBSTRING_cli:
 	buildclient -f MBSTRING_cli.c -o MBSTRING_cli
 install:
-	cp MBSTRING_serv /home/oracle/tuxedo11gR1/app/
+	cp MBSTRING_serv /home/tuxedo/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/app/MBSTRING_serv 
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/MBSTRING_serv 
 clean:
 	-rm -rf $(tagter) access.*
 echo:

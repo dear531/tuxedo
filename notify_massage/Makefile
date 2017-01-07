@@ -6,9 +6,9 @@ NOTIFY_serv:
 NOTIFY_cli:
 	buildclient -f NOTIFY_cli.c -o NOTIFY_cli
 install:
-	-cp NOTIFY_serv /home/oracle/tuxedo11gR1/app/
+	-cp NOTIFY_serv /home/tuxedo/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/app/NOTIFY_serv
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/NOTIFY_serv
 clean:
 	-rm -rf $(tagter) access.* a.out
 echo:

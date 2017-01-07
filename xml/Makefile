@@ -6,9 +6,9 @@ XML_serv:
 XML_cli:
 	buildclient -f XML_cli.cpp -o XML_cli -f -ltxml
 install:
-	cp XML_serv /home/oracle/tuxedo11gR1/app/
+	cp XML_serv /home/tuxedo/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/app/XML_serv 
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/XML_serv 
 clean:
 	-rm -rf $(tagter) access.*
 echo:

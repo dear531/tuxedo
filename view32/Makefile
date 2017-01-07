@@ -9,10 +9,10 @@ VIEW_serv:
 VIEW_cli:
 	buildclient -o VIEW_cli -f VIEW_cli.c
 install:
-	cp VIEW_serv /home/oracle/tuxedo11gR1/app/
+	cp VIEW_serv /home/tuxedo/tuxedo11gR1/app/
 uninstall:
-	-rm -rf /home/oracle/tuxedo11gR1/app/VIEW_serv
-	-rm -rf /home/oracle/tuxedo11gR1/app/friend.V
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/VIEW_serv
+	-rm -rf /home/tuxedo/tuxedo11gR1/app/friend.V
 clean:
 	-rm -rf $(tagter) access.*
 echo:
