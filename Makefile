@@ -23,5 +23,10 @@ all:
 	do\
 		make -C $$i &&  make install -C $$i;\
 	done
+clean_all:
+	@for i in `ls`;\
+	do\
+		make clean -C $$i;\
+	done
 .PHONY:
 	default clean install
