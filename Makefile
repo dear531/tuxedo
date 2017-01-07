@@ -18,5 +18,10 @@ clean:
 echo:
 	echo TUXDIR:$(TUXDIR)
 	echo tagter:$(tagter)
+all:
+	@for i in `ls`;\
+	do\
+		make -C $$i &&  make install -C $$i;\
+	done
 .PHONY:
 	default clean install
