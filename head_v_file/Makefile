@@ -1,7 +1,8 @@
 default:
 	viewc32 -d $$TUXDIR/udataobj friend.v
-	cp friend.h /home/tuxedo/tuxedo11gR1/include/
+	cp friend.h $$TUXDIR/include/
 	rm friend.h
-	mkfldhdr32 friend.fml
-	cp friend.fml.h /home/tuxedo/tuxedo11gR1/include/friendfml.h
+	cp friend.fml $$TUXDIR/udataobj/
+	mkfldhdr32 $$TUXDIR/udataobj/friend.fml
+	cp friend.fml.h $$TUXDIR/include/friendfml.h
 	rm friend.fml.h
